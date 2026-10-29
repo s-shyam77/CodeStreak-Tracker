@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Track your daily coding goals, DSA practice and programming progress.">
+  <title>CodeStreak | Daily Coding Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">&lt;/&gt;</span> CodeStreak</a>
+    <span class="date-label" id="todayLabel"></span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR DAILY DEVELOPER JOURNEY</p>
+        <h1>Small steps. <span>Big progress.</span></h1>
+        <p class="subtitle">Build consistency, one coding session at a time.</p>
+      </div>
+      <div class="streak-card">
+        <span class="flame">🔥</span>
+        <div><strong id="streakCount">0</strong><span>day streak</span></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article class="stat-card">
+        <span class="stat-icon purple">◎</span>
+        <p>Total tasks</p>
+        <strong id="totalCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon green">✓</span>
+        <p>Completed</p>
+        <strong id="completedCount">0</strong>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon orange">↗</span>
+        <p>Today's progress</p>
+        <strong id="progressCount">0%</strong>
+      </article>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-heading">
+        <div>
+          <h2>Today's progress</h2>
+          <p>Every completed task moves you forward.</p>
+        </div>
+        <strong id="progressText">0 / 0</strong>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+    </section>
+
+    <section class="tasks-section">
+      <div class="section-heading">
+        <div>
+          <h2>Today's coding plan</h2>
+          <p>Make a plan. Show up. Get it done.</p>
+        </div>
+        <button id="showFormBtn" class="primary-btn">+ Add task</button>
+      </div>
+
+      <form id="taskForm" class="task-form hidden">
+        <label for="taskTitle">Task name</label>
+        <input id="taskTitle" type="text" placeholder="e.g. Solve LeetCode #1" maxlength="100" required>
+        <label for="taskCategory">Category</label>
+        <select id="taskCategory">
+          <option value="DSA">DSA / LeetCode</option>
+          <option value="Python">Python</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Project">Project work</option>
+          <option value="Learning">Learning / Revision</option>
+        </select>
+        <div class="form-actions">
+          <button class="primary-btn" type="submit">Save task</button>
+          <button class="secondary-btn" id="cancelBtn" type="button">Cancel</button>
+        </div>
+      </form>
+
+      <div class="filters">
+        <button class="filter active" data-filter="all">All tasks</button>
+        <button class="filter" data-filter="pending">Pending</button>
+        <button class="filter" data-filter="completed">Completed</button>
+      </div>
+      <div id="taskList" class="task-list"></div>
+      <div id="emptyState" class="empty-state hidden">
+        <span>📝</span>
+        <h3>No tasks here yet</h3>
+        <p>Add a coding goal and start building your streak.</p>
+      </div>
+    </section>
+
+    <section class="tip-card">
+      <span>💡</span>
+      <div><h3>Consistency beats intensity.</h3><p>You don't need to do everything today. Just make progress.</p></div>
+    </section>
+
+    <footer>Built with ❤️ by Shyam Lal Mali · CodeStreak Tracker</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

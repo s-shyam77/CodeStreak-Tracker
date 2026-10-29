@@ -1,0 +1,110 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #edf0fa;
+  background: #0c0d14;
+  font-synthesis: none;
+  --panel: #141620;
+  --border: #282a38;
+  --muted: #969aaf;
+  --purple: #a78bfa;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+
+.topbar {
+  height: 72px; padding: 0 7%; display: flex; align-items: center;
+  justify-content: space-between; border-bottom: 1px solid var(--border);
+}
+.brand { color: #fff; text-decoration: none; font-weight: 800; font-size: 21px; }
+.brand-icon { color: var(--purple); margin-right: 8px; }
+.date-label { color: var(--muted); font-size: 13px; }
+
+.container { max-width: 1050px; width: 90%; margin: 45px auto 30px; }
+.hero { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 30px; }
+.eyebrow { color: var(--purple); letter-spacing: 2px; font-size: 10px; font-weight: 800; }
+h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -1.8px; margin: 12px 0; }
+h1 span { color: var(--purple); }
+.subtitle, .section-heading p, .progress-heading p { color: var(--muted); font-size: 13px; line-height: 1.6; }
+
+.streak-card { display: flex; align-items: center; gap: 14px; padding: 18px 24px; border: 1px solid #433329; border-radius: 16px; background: #201812; }
+.flame { font-size: 30px; }
+.streak-card div { display: flex; flex-direction: column; gap: 3px; }
+.streak-card strong { font-size: 27px; }
+.streak-card div span { color: #c4a18c; font-size: 12px; }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 18px; }
+.stat-card, .progress-card, .tasks-section { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; }
+.stat-card { padding: 20px; }
+.stat-icon { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; font-size: 19px; }
+.purple { color: #c4b5fd; background: #30264b; }
+.green { color: #86efac; background: #173729; }
+.orange { color: #fdba74; background: #422a1d; }
+.stat-card p { color: var(--muted); font-size: 12px; margin: 14px 0 8px; }
+.stat-card strong { font-size: 28px; }
+
+.progress-card { padding: 22px; margin-bottom: 24px; }
+.progress-heading, .section-heading { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+h2 { font-size: 17px; margin: 0 0 6px; }
+.progress-heading p, .section-heading p { margin: 0; }
+.progress-heading > strong { color: var(--purple); font-size: 13px; }
+.progress-track { height: 8px; background: #2b2d3b; border-radius: 20px; margin-top: 20px; overflow: hidden; }
+.progress-fill { width: 0; height: 100%; background: linear-gradient(90deg, #8b5cf6, #c4b5fd); border-radius: inherit; transition: width .25s; }
+
+.tasks-section { padding: 24px; }
+.primary-btn, .secondary-btn { padding: 11px 15px; border: 0; border-radius: 9px; font-size: 12px; font-weight: 700; }
+.primary-btn { background: var(--purple); color: #171322; }
+.primary-btn:hover { background: #c4b5fd; }
+.secondary-btn { color: #ddd; background: #292b38; }
+.filters { display: flex; gap: 8px; margin: 24px 0 15px; }
+.filter { border: 1px solid var(--border); background: transparent; color: var(--muted); padding: 8px 13px; border-radius: 8px; font-size: 12px; }
+.filter.active { color: #e9ddff; border-color: #66508c; background: #292039; }
+
+.task-form { display: grid; gap: 10px; padding: 17px; margin-top: 20px; border: 1px solid var(--border); border-radius: 12px; }
+.task-form label { color: #c7c9d7; font-size: 12px; }
+.task-form input, .task-form select { width: 100%; background: #0e1018; color: #fff; border: 1px solid #333547; border-radius: 8px; padding: 12px; outline: none; }
+.task-form input:focus, .task-form select:focus { border-color: var(--purple); }
+.form-actions { display: flex; gap: 8px; margin-top: 5px; }
+.hidden { display: none !important; }
+
+.task-list { display: grid; gap: 10px; }
+.task-item { display: flex; align-items: center; gap: 12px; padding: 15px; border: 1px solid var(--border); border-radius: 12px; background: #10121b; }
+.task-item input { width: 17px; height: 17px; accent-color: #a78bfa; cursor: pointer; flex-shrink: 0; }
+.task-info { flex: 1; min-width: 0; }
+.task-title { font-size: 13px; font-weight: 600; overflow-wrap: anywhere; }
+.task-category { display: inline-block; color: #c4b5fd; background: #292039; padding: 5px 8px; border-radius: 6px; font-size: 10px; margin-top: 7px; }
+.task-item.done .task-title { color: #777b8e; text-decoration: line-through; }
+.delete-btn { border: 0; background: transparent; color: #a3a5b6; font-size: 18px; padding: 6px; }
+.delete-btn:hover { color: #fca5a5; }
+
+.empty-state { text-align: center; padding: 35px 10px; }
+.empty-state > span { font-size: 30px; }
+.empty-state h3 { font-size: 15px; }
+.empty-state p { color: var(--muted); font-size: 12px; }
+.tip-card { display: flex; gap: 14px; padding: 20px; margin-top: 20px; border: 1px solid #40334f; background: #1b1725; border-radius: 14px; }
+.tip-card > span { font-size: 23px; }
+.tip-card h3 { font-size: 13px; margin: 0 0 7px; }
+.tip-card p { color: var(--muted); font-size: 12px; margin: 0; line-height: 1.6; }
+footer { text-align: center; color: #74788b; font-size: 11px; padding: 28px 0 10px; }
+
+@media (max-width: 650px) {
+  .topbar { padding: 0 5%; height: 62px; }
+  .date-label { font-size: 10px; }
+  .container { width: 92%; margin-top: 30px; }
+  .hero { align-items: flex-start; flex-direction: column; }
+  .streak-card { padding: 12px 18px; }
+  .stats { gap: 8px; }
+  .stat-card { padding: 12px; }
+  .stat-card p { font-size: 10px; }
+  .stat-card strong { font-size: 22px; }
+  .stat-icon { width: 29px; height: 29px; }
+  .tasks-section, .progress-card { padding: 16px; }
+  .section-heading { align-items: flex-start; }
+  .section-heading .primary-btn { padding: 10px; white-space: nowrap; }
+  .progress-heading { align-items: flex-start; }
+}
